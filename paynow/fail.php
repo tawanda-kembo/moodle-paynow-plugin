@@ -1,6 +1,6 @@
 <?php
 
-// Paynow PxPay service should redirect here on failure.
+// Paynow service should redirect here on failure.
 
 require dirname(dirname(dirname(__FILE__))) . "/config.php";
 require_once "{$CFG->dirroot}/lib/enrollib.php";

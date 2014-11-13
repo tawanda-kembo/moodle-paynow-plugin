@@ -21,7 +21,7 @@
  *
  * @package    enrol
  * @subpackage paynow
- * @copyright  2011 Eugene Venter and Jonathan Harker
+ * @copyright  2014 Tawanda Kembo
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

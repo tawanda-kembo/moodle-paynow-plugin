@@ -1,12 +1,12 @@
 <?php
 
 $string['pluginname'] = 'Paynow Payment Gateway';
-$string['pluginname_desc'] = 'This plugin lets you configure courses to be paid for using the Paynow credit card payment gateway.';
+$string['pluginname_desc'] = 'This plugin lets you configure courses to be paid for using the Paynow payment gateway.';
 
 $string['key'] = 'Paynow Key';
 $string['key_desc'] = 'This is the Paynow private key that was issued with the user id.';
 $string['userid'] = 'Paynow User ID';
-$string['userid_desc'] = 'The Paynow User ID to use for credit card authorisation.';
+$string['userid_desc'] = 'The Paynow User ID to use for authentication.';
 $string['unavailabletoguest'] = 'This course requires payment and is unavailable to the guest user.';
 $string['status'] = 'Allow Paynow enrolments';
 $string['status_desc'] = 'Allow users to use Paynow to enrol into a course by default.';

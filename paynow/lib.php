@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Enrolment using the Paynow credit card payment gateway.
+ * Enrolment using the Paynow payment gateway.
  *
  * This plugin handles credit card payments by conducting PxPay transactions
  * through the Paynow Payment Express gateway. A successful payment results in the
@@ -23,8 +23,8 @@
  * credit card details in Moodle. A truncated form of the credit card number is
  * returned in the PxPay response and is stored for reference only.
  *
- * Details of the Paynow PxPay API are online:
- * http://www.paymentexpress.com/technical_resources/ecommerce_hosted/pxpay.html
+ * Details of the Paynow API are online:
+ * http://developer.paynow.co.zw
  *
  * @package    enrol
  * @subpackage paynow

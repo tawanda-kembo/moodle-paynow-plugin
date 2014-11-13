@@ -18,7 +18,7 @@ enrolment of the user.
 INSTALLATION
 ------------
 
-Download the latest moodle-paynow-plugin.zip from the Moodle Plugins Directory and unzip
+Download the latest enrol_paynow.zip from the Moodle Plugins Directory and unzip
 the contents into the enrol/paynow directory.
 
 - http://moodle.org/plugins/

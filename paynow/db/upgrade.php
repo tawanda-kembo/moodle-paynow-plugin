@@ -19,8 +19,8 @@
  *
  * @package    enrol
  * @subpackage paynow
- * @copyright  2011 Eugene Venter
- * @author     Eugene Venter
+ * @copyright  2014 Tawanda Kembo
+ * @author     Tawanda Kembo
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
