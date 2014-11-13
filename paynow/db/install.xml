@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="enrol/paynow/db" VERSION="20111209" COMMENT="XMLDB database schema for the Paynow payment gateway Moodle enrolment plugin"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="enrol_paynow_transactions" COMMENT="Paynow enrolment plugin transactions log">
+      <FIELDS>
+        <FIELD NAME="id"           TYPE="int" LENGTH="10" UNSIGNED="true" NOTNULL="true" SEQUENCE="true" ENUM="false" NEXT="courseid"/>
+        <FIELD NAME="courseid"     TYPE="int" LENGTH="10" UNSIGNED="true" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="userid"/>
+        <FIELD NAME="userid"       TYPE="int" LENGTH="10" UNSIGNED="true" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="courseid" NEXT="instanceid"/>
+        <FIELD NAME="instanceid"   TYPE="int" LENGTH="10" UNSIGNED="true" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid" NEXT="cost"/>
+        <FIELD NAME="cost"         TYPE="char" LENGTH="13" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="instanceid" NEXT="currency"/>
+        <FIELD NAME="currency"     TYPE="char" LENGTH="4" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="cost" NEXT="date_created"/>
+        <FIELD NAME="date_created" TYPE="int" LENGTH="10" UNSIGNED="true" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="currency" NEXT="success"/>
+        <FIELD NAME="success"    TYPE="int" LENGTH="10" UNSIGNED="true" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="date_created" NEXT="merchantreference"/>
+        <FIELD NAME="merchantreference" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="success" NEXT="email"/>
+        <FIELD NAME="email"      TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="merchantreference" NEXT="txndata1"/>
+        <FIELD NAME="txndata1"   TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="email" NEXT="txndata2"/>
+        <FIELD NAME="txndata2"   TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="txndata1" NEXT="txndata3"/>
+        <FIELD NAME="txndata3"   TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="txndata2" NEXT="authcode"/>
+        <FIELD NAME="authcode"   TYPE="char" LENGTH="22"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="txndata3" NEXT="cardtype"/>
+        <FIELD NAME="cardtype"   TYPE="char" LENGTH="16"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="authcode" NEXT="cardholder"/>
+        <FIELD NAME="cardholder" TYPE="char" LENGTH="64"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="cardtype" NEXT="cardexpiry"/>
+        <FIELD NAME="cardexpiry" TYPE="char" LENGTH="10"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="cardholder" NEXT="clientinfo"/>
+        <FIELD NAME="clientinfo" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="cardexpiry" NEXT="paynowtxnref"/>
+        <FIELD NAME="paynowtxnref"  TYPE="char" LENGTH="16"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="clientinfo" NEXT="txnmac"/>
+        <FIELD NAME="txnmac"     TYPE="char" LENGTH="10"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="paynowtxnref" NEXT="response"/>
+        <FIELD NAME="response"   TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="txnmac" NEXT="cardnumber"/>
+        <FIELD NAME="cardnumber" TYPE="char" LENGTH="16"  NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="response"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
+
